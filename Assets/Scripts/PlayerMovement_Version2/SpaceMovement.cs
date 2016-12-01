@@ -13,6 +13,8 @@ public class SpaceMovement : MonoBehaviour {
 		PlayerRb = this.GetComponent<Rigidbody> ();
 		aleronroll = 0.0f;
 		terminalrollSpeed = 5.0f;
+
+
 	}
 
 	// Update is called once per frame
@@ -56,5 +58,19 @@ public class SpaceMovement : MonoBehaviour {
 			aleronroll = -terminalrollSpeed;
 		}
 	
+
+		//if (PlayerRb.rotation.eulerAngles.y > 45.0f) {
+		//	HorizMov = 0.0f;
+		//}
+
+		float HorizMov = Input.GetAxis ("Horizontal");
+		float VertiMov = Input.GetAxis ("Vertical");
+
+		PlayerRb.transform.Rotate (Vector3.right*VertiMov);
+		PlayerRb.transform.Rotate (Vector3.up*HorizMov);
+
+		if (Input.GetKeyDown("space")) {
+			PlayerRb.AddRelativeForce (Vector3.forward * forwardforce);
+		}
 	}
 }
