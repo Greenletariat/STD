@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B473EDF1-E8D8-72F8-E2E6-488D66222254}</ProjectGuid>
+    <ProjectGuid>{A20816A7-08BF-6F40-5762-964750B727E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,26 +45,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AsteroidManager.cs" />
-     <Compile Include="Assets\Scripts\CollectableManager.cs" />
-     <Compile Include="Assets\Scripts\GameFieldHelper.cs" />
-     <Compile Include="Assets\Scripts\LEGACY\AsteroidSpawner.cs" />
-     <Compile Include="Assets\Scripts\LEGACY\AsteroidSplitter.cs" />
-     <Compile Include="Assets\Scripts\LEGACY\BulletSpawner.cs" />
-     <Compile Include="Assets\Scripts\LEGACY\CameraController.cs" />
-     <Compile Include="Assets\Scripts\LEGACY\GunAim.cs" />
-     <Compile Include="Assets\Scripts\ObjectManager.cs" />
-     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement_Version2\SpaceMovement.cs" />
-     <Compile Include="Assets\Scripts\RestartButton.cs" />
-     <Compile Include="Assets\Scripts\ScoreManager.cs" />
-     <Compile Include="Assets\Scripts\StartMenuManager.cs" />
-     <Compile Include="Assets\Scripts\UIManager.cs" />
- <Reference Include="UnityEngine.Networking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\Scripts\FTA Scripts\AsteroidManager.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\CollectableManager.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\GameFieldHelper.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\LEGACY\AsteroidSpawner.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\LEGACY\AsteroidSplitter.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\LEGACY\BulletSpawner.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\LEGACY\CameraController.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\LEGACY\GunAim.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\ObjectManager.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\RestartButton.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\StartMenuManager.cs" />
+     <Compile Include="Assets\Scripts\FTA Scripts\UIManager.cs" />
+     <Compile Include="Assets\Scripts\SpaceMovement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
