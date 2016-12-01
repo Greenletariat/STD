@@ -10,6 +10,7 @@ public class SpaceMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Instantiate (this, new Vector3(Random.Range(0,100), Random.Range(0,100), Random.Range(0,100)), Quaternion.identity); //fix this! spawns infinite players
 		PlayerRb = this.GetComponent<Rigidbody> ();
 		aleronroll = 0.0f;
 		terminalrollSpeed = 5.0f;
@@ -29,7 +30,6 @@ public class SpaceMovement : MonoBehaviour {
 		if (Input.GetKey("space")||Input.GetKey(KeyCode.JoystickButton0)) {
 			PlayerRb.AddRelativeForce (Vector3.forward * forwardforce);
 		}
-		Debug.Log (isCollided);
 	}
 	void OnTriggerEnter(Collider other){
 		if (other) {
