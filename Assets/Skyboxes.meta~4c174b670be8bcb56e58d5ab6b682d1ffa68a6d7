@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 79a6fa5a9be234a87a6e137875d58930
-folderAsset: yes
-timeCreated: 1480613210
-=======
 <<<<<<< Updated upstream
-guid: 79a6fa5a9be234a87a6e137875d58930
+guid: 2f426d319f70e4ed49b80131005f7040
 folderAsset: yes
 timeCreated: 1480613210
 =======
-guid: 5faec560c49d542f3b21919333fa3c00
+guid: 87fe5fac2f09e453eb40137ce3b3831a
 folderAsset: yes
 timeCreated: 1480612172
 >>>>>>> Stashed changes
->>>>>>> 4c174b670be8bcb56e58d5ab6b682d1ffa68a6d7
 licenseType: Free
 DefaultImporter:
   userData: 
