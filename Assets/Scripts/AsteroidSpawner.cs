@@ -11,7 +11,6 @@ public class AsteroidSpawner : MonoBehaviour {
 	public int maxteroids;
 	public GameObject asteroid;
 	public float asteroidLaunchForce;
-	public float time;
 	void Start () {
 		asteroids = new ArrayList();
 	}
@@ -19,9 +18,9 @@ public class AsteroidSpawner : MonoBehaviour {
 	{
 		while(asteroids.Count < maxteroids)
 		{
-			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-150,150),0.0f,Random.Range(-150,150)), Quaternion.identity);
+			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-2000,2000),Random.Range(-2000,2000),Random.Range(-2000,2000)), Quaternion.identity);
 			asteroids.Add(ast);
-			ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(0,360),0.0f,Random.Range(0,360)) * asteroidLaunchForce);
+			ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(0,360),Random.Range(0,360),Random.Range(0,360)) * asteroidLaunchForce);
 		}
 	}
 }
