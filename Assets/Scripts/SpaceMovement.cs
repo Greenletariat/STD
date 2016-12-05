@@ -10,7 +10,8 @@ public class SpaceMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate (this, new Vector3(Random.Range(0,100), Random.Range(0,100), Random.Range(0,100)), Quaternion.identity); //fix this! spawns infinite players
+	//	Instantiate (this, new Vector3(Random.Range(0,100), Random.Range(0,100), Random.Range(0,100)), Quaternion.identity); //fix this! spawns infinite players
+		this.transform.position = new Vector3(Random.Range(-1000,1000), Random.Range(-1000,1000), Random.Range(-1000,1000));
 		PlayerRb = this.GetComponent<Rigidbody> ();
 		aleronroll = 0.0f;
 		terminalrollSpeed = 5.0f;
