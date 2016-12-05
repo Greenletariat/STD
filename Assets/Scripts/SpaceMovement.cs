@@ -32,10 +32,9 @@ public class SpaceMovement : MonoBehaviour {
 		if (Input.GetKey("space")||Input.GetKey(KeyCode.JoystickButton0)) {
 			PlayerRb.AddRelativeForce (Vector3.forward * forwardforce);
 		}
-<<<<<<< HEAD:Assets/Scripts/SpaceMovement.cs
-=======
+
 		//Debug.Log (isCollided);
->>>>>>> 6502dfbb07bec3d43deca0ead6e0b70d0843ac69:Assets/Scripts/PlayerMovement_Version2/SpaceMovement.cs
+
 	}
 	void OnTriggerEnter(Collider other){
 		if (other) {
