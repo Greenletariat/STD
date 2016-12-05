@@ -8,24 +8,25 @@ public class AsteroidSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	private ArrayList asteroids;
+	public GameObject Player;
 	public int maxteroids;
 	public GameObject asteroid;
 	public float asteroidLaunchForce;
-	public float time;
+	public GameObject finish;
+	private GameObject assteroid;
+	private GameObject p;
 	void Start () {
 		asteroids = new ArrayList();
-	}
-	void Update()
-	{
 		while(asteroids.Count < maxteroids)
 		{
-			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-150,150),0.0f,Random.Range(-150,150)), Quaternion.identity);
+			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-150000,150000),Random.Range(-150000,150000),Random.Range(-150000,150000)), Quaternion.identity);
 			asteroids.Add(ast);
-			ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(0,360),0.0f,Random.Range(0,360)) * asteroidLaunchForce);
+			//ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(-5,5),Random.Range(-5,5),Random.Range(-5,5)));
 		}
-
-		//assuming asteroids aren't destroyed and the arraylist stays constant throughout
-		GameObject winAsteroid = (GameObject)asteroids[Random.Range(0,asteroids.Count)];
-		winAsteroid.tag = "FinishLine";
+		assteroid = (GameObject) asteroids[Random.Range(0,maxteroids+1)];
+		p = (GameObject)Instantiate(finish, assteroid.transform.position + new Vector3(0.0f,401.0f,0.0f),Quaternion.identity);
 	}
+void Update() {
+	Debug.Log(Player.transform.position - p.transform.position);
+}
 }
