@@ -23,5 +23,9 @@ public class AsteroidSpawner : MonoBehaviour {
 			asteroids.Add(ast);
 			ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(0,360),0.0f,Random.Range(0,360)) * asteroidLaunchForce);
 		}
+
+		//assuming asteroids aren't destroyed and the arraylist stays constant throughout
+		GameObject winAsteroid = (GameObject)asteroids[Random.Range(0,asteroids.Count)];
+		winAsteroid.tag = "FinishLine";
 	}
 }
