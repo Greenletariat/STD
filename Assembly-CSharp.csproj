@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
      <Compile Include="Assets\Scripts\AsteroidSplitter.cs" />
+     <Compile Include="Assets\Scripts\PlayerFinishCollider.cs" />
      <Compile Include="Assets\Scripts\Saved\CameraController.cs" />
      <Compile Include="Assets\Scripts\SpaceMovement.cs" />
  <Reference Include="UnityEngine.UI">
