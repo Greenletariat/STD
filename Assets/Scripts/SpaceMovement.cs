@@ -14,6 +14,8 @@ public class SpaceMovement : MonoBehaviour {
 		PlayerRb = this.GetComponent<Rigidbody> ();
 		aleronroll = 0.0f;
 		terminalrollSpeed = 5.0f;
+
+
 	}
 
 	// Update is called once per frame
@@ -30,6 +32,10 @@ public class SpaceMovement : MonoBehaviour {
 		if (Input.GetKey("space")||Input.GetKey(KeyCode.JoystickButton0)) {
 			PlayerRb.AddRelativeForce (Vector3.forward * forwardforce);
 		}
+<<<<<<< HEAD:Assets/Scripts/SpaceMovement.cs
+=======
+		//Debug.Log (isCollided);
+>>>>>>> 6502dfbb07bec3d43deca0ead6e0b70d0843ac69:Assets/Scripts/PlayerMovement_Version2/SpaceMovement.cs
 	}
 	void OnTriggerEnter(Collider other){
 		if (other) {
@@ -56,5 +62,19 @@ public class SpaceMovement : MonoBehaviour {
 			aleronroll = -terminalrollSpeed;
 		}
 	
+
+		//if (PlayerRb.rotation.eulerAngles.y > 45.0f) {
+		//	HorizMov = 0.0f;
+		//}
+
+		float HorizMov = Input.GetAxis ("Horizontal");
+		float VertiMov = Input.GetAxis ("Vertical");
+
+		PlayerRb.transform.Rotate (Vector3.right*VertiMov);
+		PlayerRb.transform.Rotate (Vector3.up*HorizMov);
+
+		if (Input.GetKeyDown("space")) {
+			PlayerRb.AddRelativeForce (Vector3.forward * forwardforce);
+		}
 	}
 }

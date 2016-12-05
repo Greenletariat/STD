@@ -1,9 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SpaceMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/FTA Scripts/LEGACY/AsteroidSpawner.cs" Line="22" Column="141" />
       <File FileName="Assets/Scripts/SpaceMovement.cs" Line="13" Column="155" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerFinishCollider.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerFinishCollider.cs" Line="24" Column="3" />
+      <File FileName="Assets/Scripts/PlayerMovement_Version2/SpaceMovement.cs" Line="67" Column="47" />
+      <File FileName="Assets/Scripts/PlayerManager.cs" Line="12" Column="1" />
+>>>>>>> 6502dfbb07bec3d43deca0ead6e0b70d0843ac69
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
