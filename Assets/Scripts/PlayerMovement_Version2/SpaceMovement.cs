@@ -44,10 +44,10 @@ public class SpaceMovement : MonoBehaviour {
 		}
 	}
 	void AleronBarrelRoll(){
-		if (Input.GetKey(KeyCode.I)) {
+		if (Input.GetKey(KeyCode.Q)) {
 			aleronroll++;
 		}
-		else if (Input.GetKey (KeyCode.O)) {
+		else if (Input.GetKey (KeyCode.E)) {
 			aleronroll--;
 		} else {
 			aleronroll = 0.0f;
@@ -57,7 +57,7 @@ public class SpaceMovement : MonoBehaviour {
 		} else if (aleronroll <= -terminalrollSpeed) {
 			aleronroll = -terminalrollSpeed;
 		}
-	
+
 
 		//if (PlayerRb.rotation.eulerAngles.y > 45.0f) {
 		//	HorizMov = 0.0f;
