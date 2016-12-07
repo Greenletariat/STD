@@ -50,13 +50,19 @@
      <Compile Include="Assets\Scripts\PlayerFinishCollider.cs" />
      <Compile Include="Assets\Scripts\Saved\CameraController.cs" />
      <Compile Include="Assets\Scripts\SpaceMovement.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\SpawnerPlayer.cs" />
      <Compile Include="Assets\Test1_GitTest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+=======
+>>>>>>> 1a44f54bc875875fe2d29613d94d672ee03b1b84
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
