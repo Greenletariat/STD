@@ -7,7 +7,10 @@ public class SpaceMovement : MonoBehaviour {
 	Rigidbody PlayerRb;
 	public float AccelMultiplier = 10.0f;
 	public float stoppingforce = 10.0f;
-	public float maxForce = 1000.0f;
+	public float maxForce/* = 1000.0f */;
+
+	public float maxVel = 1000.0f
+
 	private bool isCollided, Shipstopper, GoNow;
 	private float aleronroll, terminalrollSpeed,ForceCounter,theForce;
 	public Text health;
@@ -41,11 +44,12 @@ public class SpaceMovement : MonoBehaviour {
 		//Debug.Log (AccelCounter);
 		if (Input.GetKey ("space") || Input.GetKey (KeyCode.JoystickButton0)) {
 			//GoNow = true;
-			ForceCounter++;
+//lbn		ForceCounter++;
+			PlayerRb.AddRelativeForce(maxForce);
 		}
-		if (ForceCounter >= maxForce) {
-			ForceCounter = maxForce;
-		}
+//lbn		if (ForceCounter >= maxForce) {
+//lbn			ForceCounter = maxForce;
+//lbn		}
 
 		if (Input.GetKey (KeyCode.LeftShift)||Input.GetKey (KeyCode.RightShift)) {
 			//Debug.Log ("hello?");
@@ -53,10 +57,11 @@ public class SpaceMovement : MonoBehaviour {
 			ForceCounter = 0.0f;
 		} else {
 			PlayerRb.drag = 0.0f;
+		//	ForceCounter = 0.0f;
 		}
-		theForce = ForceCounter * AccelMultiplier;
-		Debug.Log (ForceCounter);
-		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
+//		theForce = ForceCounter * AccelMultiplier;
+//		Debug.Log (ForceCounter);
+//		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
 
 		time += Time.deltaTime;
 		timer.text = time + " s";
