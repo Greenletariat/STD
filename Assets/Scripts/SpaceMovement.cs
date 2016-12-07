@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpaceMovement : MonoBehaviour {
 
@@ -9,6 +10,11 @@ public class SpaceMovement : MonoBehaviour {
 	public float maxForce = 1000.0f;
 	private bool isCollided, Shipstopper, GoNow;
 	private float aleronroll, terminalrollSpeed,ForceCounter,theForce;
+	public Text health;
+	public Text timer;
+	public Text speed;
+	private float time = 0.0f;
+	private float velocity = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +23,8 @@ public class SpaceMovement : MonoBehaviour {
 		terminalrollSpeed = 5.0f;
 		PlayerRb.drag = 0.0f;
 		stoppingforce = stoppingforce;
+		timer.text = 0.0f + " s";
+		speed.text = 0.0 + " m/s";
 	}
 
 	// Update is called once per frame
@@ -49,7 +57,11 @@ public class SpaceMovement : MonoBehaviour {
 		theForce = ForceCounter * AccelMultiplier;
 		Debug.Log (ForceCounter);
 		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
-			
+
+		time += Time.deltaTime;
+		timer.text = time + " s";
+		velocity = PlayerRb.velocity.magnitude;
+		speed.text = velocity + " m/s";	
 
 		//Debug.Log (isCollided);
 
