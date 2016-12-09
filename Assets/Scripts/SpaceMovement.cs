@@ -9,7 +9,7 @@ public class SpaceMovement : MonoBehaviour {
 	public float stoppingforce = 10.0f;
 	public float maxForce/* = 1000.0f */;
 
-	public float maxVel = 1000.0f
+	public float maxVel = 1000.0f;
 
 	private bool isCollided, Shipstopper, GoNow;
 	private float aleronroll, terminalrollSpeed,ForceCounter,theForce;
@@ -44,7 +44,9 @@ public class SpaceMovement : MonoBehaviour {
 		//Debug.Log (AccelCounter);
 		if (Input.GetKey ("space") || Input.GetKey (KeyCode.JoystickButton0)) {
 			//GoNow = true;
-//lbn		ForceCounter++;
+			ForceCounter++;
+			theForce = ForceCounter * AccelMultiplier;
+			Debug.Log (ForceCounter);
 			PlayerRb.AddRelativeForce(maxForce);
 		}
 //lbn		if (ForceCounter >= maxForce) {
