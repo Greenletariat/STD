@@ -16,8 +16,9 @@ public class SpaceMovement : MonoBehaviour {
 	public Text timer;
 	public Text speed;
 	public Image healthbar;
-	private float time = 0.0f;
-	private float velocity = 0.0f;
+	private decimal time = 0.0m;
+	private decimal velocity = 0.0m;
+	public GameObject loseCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +27,7 @@ public class SpaceMovement : MonoBehaviour {
 		terminalrollSpeed = 5.0f;
 		PlayerRb.drag = 0.0f;
 		stoppingforce = stoppingforce;
-		timer.text = 0.0f + " s";
+		timer.text = 0.0 + " s";
 		speed.text = 0.0 + " m/s";
 		currentHealth = maxHealth;
 	}
@@ -62,10 +63,13 @@ public class SpaceMovement : MonoBehaviour {
 		//Debug.Log (ForceCounter);
 		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
 
-		time += Time.deltaTime;
-		timer.text = time + " s";
-		velocity = PlayerRb.velocity.magnitude;
-		speed.text = velocity + " m/s";	
+		time += (decimal)Time.deltaTime;
+		int d = 3; 
+		decimal temptime = decimal.Round (time, d);
+		timer.text = temptime + " s";
+		velocity = (decimal)(PlayerRb.velocity.magnitude);
+		decimal tempvelocity = decimal.Round (velocity, d);
+		speed.text = tempvelocity + " m/s";	
 
 		//Debug.Log (isCollided);
 
@@ -120,10 +124,14 @@ public class SpaceMovement : MonoBehaviour {
 		}
 	}
 	void OnCollisionEnter(Collision other){
-		Debug.Log ("collsion" + other.gameObject.tag);
 		if (other.gameObject.CompareTag("Asteroid") && currentHealth > 10) {
 			currentHealth -= 10;
 			healthbar.rectTransform.sizeDelta = new Vector2 (currentHealth, healthbar.rectTransform.sizeDelta.y);
+		}
+		if(other.gameObject.CompareTag("Asteroid") && currentHealth <= 10){
+			currentHealth = 0;
+			healthbar.rectTransform.sizeDelta = new Vector2 (currentHealth, healthbar.rectTransform.sizeDelta.y);
+			loseCanvas.SetActive (true);
 		}
 	}
 }
