@@ -121,10 +121,9 @@ public class SpaceMovement : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision other){
 		Debug.Log ("collsion" + other.gameObject.tag);
-		if (other.gameObject.CompareTag("Asteroid")) {
+		if (other.gameObject.CompareTag("Asteroid") && currentHealth > 10) {
 			currentHealth -= 10;
 			healthbar.rectTransform.sizeDelta = new Vector2 (currentHealth, healthbar.rectTransform.sizeDelta.y);
-			Debug.Log ("currentHealth" + currentHealth);
-		}	
+		}
 	}
 }
