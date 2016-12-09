@@ -18,7 +18,8 @@ public class AsteroidSpawner : MonoBehaviour {
 		asteroids = new ArrayList();
 		while(asteroids.Count < maxteroids)
 		{
-			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-350000,350000),Random.Range(-350000,350000),Random.Range(-350000,350000)), Quaternion.identity);
+			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-300000,300000),Random.Range(-300000,300000),Random.Range(-300000,300000)), Quaternion.identity);
+			ast.tag = "Asteroid";
 			asteroids.Add(ast);
 			//ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(0,360),0.0f,Random.Range(0,360)) * asteroidLaunchForce);
 		}
