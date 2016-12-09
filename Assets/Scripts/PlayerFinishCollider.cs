@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class PlayerFinishCollider : MonoBehaviour {
 
 	public GameObject player;
 	GameObject winCanvas;
+	Button b1;
 
 	void Start(){
 
@@ -19,6 +21,12 @@ public class PlayerFinishCollider : MonoBehaviour {
 			Debug.Log ("Win Canvas not initialized!: " + this.ToString ());
 		}
 		winCanvas.SetActive(false);
+
+		b1 = GameObject.Find("WinStateButton").GetComponent<Button>();
+		if (b1 == null){
+			Debug.Log("Reset Button not initialized!: " + this.ToString());
+		}
+		b1.onClick.AddListener(delegate() {Restart();});
 
 	}
 
