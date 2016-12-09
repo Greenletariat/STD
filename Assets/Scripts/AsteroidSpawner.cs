@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class AsteroidSpawner : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class AsteroidSpawner : MonoBehaviour {
 	public GameObject Player;
 	private GameObject winAsteroid;
 	private GameObject winner;
+	public Text distance;
 	void Start () {
 		asteroids = new ArrayList();
 		while(asteroids.Count < maxteroids)
@@ -21,6 +23,7 @@ public class AsteroidSpawner : MonoBehaviour {
 			GameObject ast = (GameObject)Instantiate(asteroid, new Vector3(Random.Range(-300000,300000),Random.Range(-300000,300000),Random.Range(-300000,300000)), Quaternion.identity);
 			ast.tag = "Asteroid";
 			asteroids.Add(ast);
+			//distance.text = (winner.transform.position - Player.transform.position) + " m";
 			//ast.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(0,360),0.0f,Random.Range(0,360)) * asteroidLaunchForce);
 		}
 
@@ -31,6 +34,6 @@ public class AsteroidSpawner : MonoBehaviour {
 	}
 	void Update()
 	{
-				Debug.Log(winner.transform.position - Player.transform.position);
+				distance.text = (winner.transform.position - Player.transform.position).magnitude + " m";
 	}
 }
