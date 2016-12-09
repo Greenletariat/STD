@@ -47,6 +47,8 @@ public class SpaceMovement : MonoBehaviour {
 		if (Input.GetKey ("space") || Input.GetKey (KeyCode.JoystickButton0)) {
 			//GoNow = true;
 			ForceCounter++;
+			theForce = ForceCounter * AccelMultiplier;
+			PlayerRb.AddRelativeForce (Vector3.forward * theForce);
 		}
 		if (ForceCounter >= maxForce) {
 			ForceCounter = maxForce;
@@ -59,9 +61,8 @@ public class SpaceMovement : MonoBehaviour {
 		} else {
 			PlayerRb.drag = 0.0f;
 		}
-		theForce = ForceCounter * AccelMultiplier;
+
 		//Debug.Log (ForceCounter);
-		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
 
 		time += (decimal)Time.deltaTime;
 		int d = 3; 
