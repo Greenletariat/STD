@@ -13,11 +13,15 @@ public class SpaceMovement : MonoBehaviour {
 
 	private bool isCollided, Shipstopper, GoNow;
 	private float aleronroll, terminalrollSpeed,ForceCounter,theForce;
+	public int maxHealth = 100;
+	private int currentHealth;
 	public Text health;
 	public Text timer;
 	public Text speed;
-	private float time = 0.0f;
-	private float velocity = 0.0f;
+	public Image healthbar;
+	private decimal time = 0.0m;
+	private decimal velocity = 0.0m;
+	public GameObject loseCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +30,9 @@ public class SpaceMovement : MonoBehaviour {
 		terminalrollSpeed = 5.0f;
 		PlayerRb.drag = 0.0f;
 		stoppingforce = stoppingforce;
-		timer.text = 0.0f + " s";
+		timer.text = 0.0 + " s";
 		speed.text = 0.0 + " m/s";
+		currentHealth = maxHealth;
 	}
 
 	// Update is called once per frame
@@ -46,8 +51,12 @@ public class SpaceMovement : MonoBehaviour {
 			//GoNow = true;
 			ForceCounter++;
 			theForce = ForceCounter * AccelMultiplier;
+<<<<<<< HEAD
 			Debug.Log (ForceCounter);
 			PlayerRb.AddRelativeForce(maxForce);
+=======
+			PlayerRb.AddRelativeForce (Vector3.forward * theForce);
+>>>>>>> f47d94801cf89f9af469d227a45c2be1c4ab24ff
 		}
 //lbn		if (ForceCounter >= maxForce) {
 //lbn			ForceCounter = maxForce;
@@ -61,14 +70,22 @@ public class SpaceMovement : MonoBehaviour {
 			PlayerRb.drag = 0.0f;
 		//	ForceCounter = 0.0f;
 		}
+<<<<<<< HEAD
 //		theForce = ForceCounter * AccelMultiplier;
 //		Debug.Log (ForceCounter);
 //		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
+=======
+>>>>>>> f47d94801cf89f9af469d227a45c2be1c4ab24ff
 
-		time += Time.deltaTime;
-		timer.text = time + " s";
-		velocity = PlayerRb.velocity.magnitude;
-		speed.text = velocity + " m/s";	
+		//Debug.Log (ForceCounter);
+
+		time += (decimal)Time.deltaTime;
+		int d = 3; 
+		decimal temptime = decimal.Round (time, d);
+		timer.text = temptime + " s";
+		velocity = (decimal)(PlayerRb.velocity.magnitude);
+		decimal tempvelocity = decimal.Round (velocity, d);
+		speed.text = tempvelocity + " m/s";	
 
 		//Debug.Log (isCollided);
 
@@ -80,6 +97,7 @@ public class SpaceMovement : MonoBehaviour {
 		if (other) {
 			isCollided = true;
 		}
+
 	}
 	void OnTriggerExit(Collider other){
 		if (other) {
@@ -119,6 +137,17 @@ public class SpaceMovement : MonoBehaviour {
 	void ShipStopper(){
 		if (Input.GetKeyDown(KeyCode.N)) {
 			PlayerRb.AddRelativeForce (Vector3.forward * stoppingforce);
+		}
+	}
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.CompareTag("Asteroid") && currentHealth > 10) {
+			currentHealth -= 10;
+			healthbar.rectTransform.sizeDelta = new Vector2 (currentHealth, healthbar.rectTransform.sizeDelta.y);
+		}
+		if(other.gameObject.CompareTag("Asteroid") && currentHealth <= 10){
+			currentHealth = 0;
+			healthbar.rectTransform.sizeDelta = new Vector2 (currentHealth, healthbar.rectTransform.sizeDelta.y);
+			loseCanvas.SetActive (true);
 		}
 	}
 }
