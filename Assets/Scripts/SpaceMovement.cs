@@ -51,12 +51,8 @@ public class SpaceMovement : MonoBehaviour {
 			//GoNow = true;
 			ForceCounter++;
 			theForce = ForceCounter * AccelMultiplier;
-<<<<<<< HEAD
 			Debug.Log (ForceCounter);
-			PlayerRb.AddRelativeForce(maxForce);
-=======
 			PlayerRb.AddRelativeForce (Vector3.forward * theForce);
->>>>>>> f47d94801cf89f9af469d227a45c2be1c4ab24ff
 		}
 //lbn		if (ForceCounter >= maxForce) {
 //lbn			ForceCounter = maxForce;
@@ -70,12 +66,9 @@ public class SpaceMovement : MonoBehaviour {
 			PlayerRb.drag = 0.0f;
 		//	ForceCounter = 0.0f;
 		}
-<<<<<<< HEAD
 //		theForce = ForceCounter * AccelMultiplier;
 //		Debug.Log (ForceCounter);
 //		PlayerRb.AddRelativeForce (Vector3.forward * theForce);
-=======
->>>>>>> f47d94801cf89f9af469d227a45c2be1c4ab24ff
 
 		//Debug.Log (ForceCounter);
 
