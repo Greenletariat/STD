@@ -20,13 +20,14 @@ public class PlayerFinishCollider : MonoBehaviour {
 		if (winCanvas == null) {
 			Debug.Log ("Win Canvas not initialized!: " + this.ToString ());
 		}
-		winCanvas.SetActive(false);
+
 
 		b1 = GameObject.Find("WinStateButton").GetComponent<Button>();
 		if (b1 == null){
 			Debug.Log("Reset Button not initialized!: " + this.ToString());
 		}
 		b1.onClick.AddListener(delegate() {Restart();});
+		winCanvas.SetActive(false);
 
 	}
 
